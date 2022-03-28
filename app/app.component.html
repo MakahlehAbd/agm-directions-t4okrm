@@ -1,0 +1,17 @@
+<agm-map [latitude]="lat" [longitude]="lng">
+  <agm-direction
+    [origin]="origin"
+    [destination]="destination"
+    [waypoints]="waypoints"
+    [markerOptions]="markerOptions"
+    [renderOptions]="renderOptions"
+    (onChange)="onChange($event)"
+    (originDrag)="onOriginDrag($event)"
+    (destinationDrag)="onDestinationDrag($event)">
+  </agm-direction>
+</agm-map>
+<div>
+  <button *ngIf="!isEdit" (click)="enableEdit()">Enable Edit</button>
+  <button *ngIf="isEdit">Save</button>
+  <button *ngIf="isEdit">Cancel</button>
+</div>
